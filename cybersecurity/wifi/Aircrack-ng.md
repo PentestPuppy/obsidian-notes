@@ -281,6 +281,9 @@ CH  1 ][ Elapsed: 1 min ][ 2007-04-26 17:41 ][ WPA handshake: 00:14:6C:7A:41:81
 ```
 In the output, we can tell that the client disconnected and reconnected by the *increased numbers in the `Lost` and `Frames` counts*. We also captured a WPA handshake which will be saved to the `.pcap` file we created by calling the `-w` flag.
 
-> [!References]
+> [!Resources]
 > - [Aircrack-ng](https://github.com/aircrack-ng/aircrack-ng)
 > - [HTB Academy](https://academy.hackthebox.com/module/222/section/2922)
+
+> [!Related]
+> - [My notes from CWP](../../CWP/offensive-wifi-recon/packet-capture.md)
