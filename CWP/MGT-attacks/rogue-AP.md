@@ -3,7 +3,7 @@ For a rogue AP attack to work on a [MGT](../../networking/wifi/802.1X.md) networ
 1. The client uses a username and password for authentication (does not use a certificate)
 2. The client does not verify the server's certificate with a known CA
 
-To carry out the attack, you have to *generate a fake [SSL](../../networking/protocols/SSL.md) certificate* which will be sent to clients to set up the [TLS](../../networking/protocols/TLS.md) tunnel. We can use `eaphammer` to generate the cert with the following command:
+To carry out the attack, you have to *generate a fake [SSL](../../networking/protocols/SSL.md) certificate* which will be sent to clients to set up the [TLS](../../networking/protocols/TLS.md) tunnel. First, you have to *generate a self-signed CA*. Then, you have to *sign the certificate with the CA*. We can use `eaphammer` to generate the cert with the following command:
 ```bash
 ./eaphammer --cert-wizard
 ```

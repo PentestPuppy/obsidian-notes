@@ -23,6 +23,11 @@ mdk4 wlan0mon p -t [BSSID] -f [ESSID-DIC]
 - `p`: Used to discover and test hidden SSIDs in a Wi-Fi network
 - `-t [BSSID]`: MAC address of the target access point
 - `-f [ESSID-DIC]`: Path to the wordlist containing possible SSID names. This dictionary is usually customized based on other public networks or possible keywords
+**NOTE:** Make sure no other tools are running on `wlan0mon`! Also make sure the interface is configured on the right channel!
+```bash
+# if the target AP is on channel 3, run this first:
+iwconfig wlan0mon channel 3
+```
 ### Client Reconnection
 Another technique involves waiting for a client to reconnect or forcing the reconnection via a deauthentication attack. This method works as follows:
 - Disconnect clients from the access point:

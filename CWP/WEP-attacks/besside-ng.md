@@ -4,8 +4,9 @@
 ### Attacking WEP
 To automatically crack WEP networks:
 ```bash
-besside-ng wlan0mon
+besside-ng wlan0mon -b F0:9F:C2:F7:FE:9B
 ```
+- `-b`: target BSSID (otherwise it will attack every AP within range)
 The output will look something like this:
 ![](../CWP-pics/besside-ng-1.png)
 The key is displayed on the screen *in hex format* separated by ":". To use the key, just remove the ":". Then you can connect to the network.

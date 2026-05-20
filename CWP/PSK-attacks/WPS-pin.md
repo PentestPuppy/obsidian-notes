@@ -39,7 +39,7 @@ Create the following conf file for `wpa_supplicant`:
 ```bash
 network={
   ssid="wifi-event"
-  psk=@M<PASSWORD>!@
+  psk="@M<PASSWORD>!@"
 }
 ```
 Then connect by running:

