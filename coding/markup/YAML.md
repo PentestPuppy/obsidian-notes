@@ -3,7 +3,7 @@ A language commonly used for configuration files and for applications to store o
 ## Syntax:
 YAML allows some custom data types and natively encodes *scalars* (strings, integers, floats), lists, and associative arrays (dictionaries, objects, etc.). 
 
-Colon-separated syntax to denote key value pairs is taken from `RFC 822` which defines headers for [email](/networking/email.md). YAML documents are denotes with `---` as a document separator (similar to MIME `RFC 2046`). 
+Colon-separated syntax to denote key value pairs is taken from `RFC 822` which defines headers for [email](/networking/email.md). YAML documents are denoted with `---` as a document separator (similar to MIME `RFC 2046`). 
 ## Basic Components
 ### Conventional block format
 New items in a list begin with a hyphen+space block format:

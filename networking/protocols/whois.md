@@ -32,6 +32,14 @@ WHOIS servers are operated by registries and registrars. One example of a regist
 There are also Regional Internet Registries (RIRs) which track internet data (including WHOIS data) for specific geolocations. For example, [ARIN](https://en.wikipedia.org/wiki/American_Registry_for_Internet_Numbers) is the RIR for the US, Canada, and parts of the Caribbean and North Atlantic.
 
 The benefit of RIRs is that they _cross reference_ their records. So, if you query ARIN for a record which RIPE (another RIR) is responsible for, the response will include a placeholder _pointing to the RIPE WHOIS server_.
+#### RIPE
+RIPE is the RIR for Europe, the Middle East and parts of Central Asia. RIPE Identifiers include:
+- __ASNs__ (Autonomous System Numbers)
+- __IP address blocks__ (IPv4 and IPv6 allocations)
+- __Maintainer objects__ (MNTNER)
+- __Person/Role objects__ for contacts
+- __Organization IDs__ (ORG-XXX)
+- Other database objects in the RIPE Database
 ## Lookup Types
 There are two models for storing and looking up information in a WHOIS database:
 ### Thick Lookup

@@ -79,6 +79,44 @@ Use of EPSV/EPRT cmds for IPv6: on.
 Command line editing: on.
 Version: tnftp 20230507
 ```
+## FTP Commands
+### Basic Connection & Authentication:
+- `USER <username>` - Specify username
+- `PASS <password>` - Specify password
+- `QUIT` or `BYE` - Disconnect from server
+### Navigation Commands:
+- `PWD` - Print working directory (show current directory)
+- `CWD <directory>` - Change working directory
+- `CDUP` - Change to parent directory (go up one level)
+### File Listing:
+- `LIST` - List files in current directory (detailed)
+- `NLST` - Name list (simple file listing)
+- `STAT` - Get server status or file status
+### File Transfer:
+- `RETR <filename>` - Retrieve/download a file
+- `STOR <filename>` - Store/upload a file
+- `APPE <filename>` - Append to a file
+- `DELE <filename>` - Delete a file
+### Directory Operations:
+- `MKD <directory>` - Make directory
+- `RMD <directory>` - Remove directory
+- `RNFR <from>` - Rename from (use with RNTO)
+- `RNTO <to>` - Rename to
+### Transfer Mode:
+- `TYPE A` - Set ASCII transfer mode (text files)
+- `TYPE I` - Set binary transfer mode (images, executables)
+- `PASV` - Enter passive mode
+- `PORT` - Enter active mode
+### System Information:
+- `SYST` - Get system type
+- `HELP` - List available commands
+- `NOOP` - No operation (keep-alive)
+### Microsoft FTP Specific:
+- `OPTS UTF8 ON` - Enable UTF-8 encoding (if supported)
+- `FEAT` - List server features/capabilities
+__Note:__ Microsoft FTP Service typically supports standard RFC 959 FTP commands. The most commonly used for basic operations are: USER, PASS, PWD, CWD, LIST, RETR, STOR, and QUIT.
+
+
 
 > [!Related]
 > - [FTP protocol](/networking/protocols/FTP.md)
