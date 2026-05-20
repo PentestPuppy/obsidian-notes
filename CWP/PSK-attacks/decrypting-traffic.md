@@ -27,7 +27,7 @@ Once you've captured the handshake **AND** have the networks PSK/ password, you 
 ##### 2.1 Decrypt with `airdecap-ng`
 `airdecap-ng` is part of the [Aircrack-ng](../../cybersecurity/wifi/Aircrack-ng.md) suite. We can use it to decrypt traffic by giving it the AP's `ESSID` and the network's password, as well as the capture file with the handshakes:
 ```bash
-airdcap-ng -e <ESSID> -p <PASSWORD> ./captured.cap
+airdecap-ng -e <ESSID> -p <PASSWORD> ./captured.cap
 ```
 This command generates a capture file *with a `-dec`* at the end of its name. In this example, it would be named `./captured-dec.cap`. If you open the file with Wireshark, then you'll be able to view all of the decrypted traffic.
 ##### 2.2 Decrypt with Wireshark
