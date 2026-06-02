@@ -1,5 +1,5 @@
 # Connecting to Wi-Fi Network
-For managing Wi-Fi networks on Linux, two popular tools are nmcli and wpa_supplicant. nmcli is a command-line client for NetworkManager and is suitable for quick tasks. On the other hand, wpa_supplicant provides greater control, especially useful for complex configurations.
+For managing Wi-Fi networks on Linux, two popular tools are `nmcli` and `wpa_supplicant`. `nmcli` is a command-line client for NetworkManager and is suitable for quick tasks. On the other hand, `wpa_supplicant` provides greater control, especially useful for complex configurations.
 ## Open Networks (OPN)
 ### Using `nmcli`
 ```bash
@@ -41,6 +41,7 @@ sudo wpa_supplicant -i wlan0 -c wifi-owe.conf
 ```bash
 nmcli device wifi connect SSID_NAME password PASSWORD
 ```
+Replace `PASSWORD` with the WEP key.
 ### Using `wpa_supplicant`
 #### 1. Create a configuration file named `wifi-wep.conf`:
 ```bash
@@ -57,13 +58,13 @@ network={
 ```bash
 sudo wpa_supplicant -i wlan0 -c wifi-wep.conf
 ```
-## WPA/WPA2 PSK (Pre-Shared Key) Networks[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#wpawpa2-psk-pre-shared-key-networks)
-### Using nmcli[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#using-nmcli)
+## WPA/WPA2 PSK (Pre-Shared Key) Networks
+### Using `nmcli`
 To connect:
 ```
 nmcli device wifi connect SSID_NAME password PASSWORD
 ```
-### Using wpa_supplicant[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#using-wpa_supplicant)
+### Using `wpa_supplicant`
 #### 1. Create a configuration file named `wifi-psk.conf`
 ```
 network={
@@ -76,13 +77,13 @@ network={
 ```
 sudo wpa_supplicant -i wlan0 -c wifi-psk.conf
 ```
-## WPA3-SAE Networks[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#wpa3-sae-networks)
-### Using nmcli[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#using-nmcli)
+## WPA3-SAE Networks
+### Using `nmcli`
 To connect:
 ```
 nmcli device wifi connect SSID_NAME password PASSWORD
 ```
-### Using wpa_supplicant[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#using-wpa_supplicant)
+### Using `wpa_supplicant`
 #### 1. Create a configuration file named `wifi-sae.conf`
 ```
 network={
@@ -97,15 +98,15 @@ network={
 ```
 sudo wpa_supplicant -i wlan0 -c wifi-sae.conf
 ```
-## WPA/WPA2 Enterprise (MGT) Networks[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#wpawpa2-enterprise-mgt-networks)
+## WPA/WPA2 Enterprise (MGT) Networks
 For WPA/WPA2/WPA3-Enterprise, specific configuration is needed due to various authentication methods.
-### Using nmcli[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#using-nmcli)
+### Using `nmcli`
 To connect:
 ```
 nmcli device wifi connect SSID_NAME password PASSWORD identity USERNAME eap PEAP phase2-auth MSCHAPV2
 ```
 Replace USERNAME and PASSWORD with the necessary credentials.
-### Using wpa_supplicant[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#using-wpa_supplicant)
+### Using `wpa_supplicant`
 #### 1. Create a configuration file named `wifi-mgt.conf`
 ```
 network={
@@ -129,14 +130,14 @@ network={
 sudo wpa_supplicant -i wlan0 -c wifi-mgt.conf
 ```
 - Replace wlan0 with the necessary interface in each case
-- wpa_supplicant requires root privileges for most operations
-- Use -B with wpa_supplicant to run it in the background. Omit -B for foreground operation and more detailed output
-- Ensure that your wpa_supplicant and NetworkManager are up to date to support newer protocols like WPA3-SAE and OWE
-- If the ESSID is hidden, add hidden yes in the nmcli command
-- wpa_supplicant can be run in the background with -B. In this mode, you can view logs with `sudo journalctl -u wpa_supplicant` or with `sudo grep wpa_supplicant /var/log/syslog`
-## Managing Wireless Networks with WPA GUI in Ubuntu[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#managing-wireless-networks-with-wpa-gui-in-ubuntu)
+- `wpa_supplicant` requires root privileges for most operations
+- Use -B with `wpa_supplicant` to run it in the background. Omit -B for foreground operation and more detailed output
+- Ensure that your `wpa_supplicant` and NetworkManager are up to date to support newer protocols like WPA3-SAE and OWE
+- If the ESSID is hidden, add hidden yes in the `nmcli` command
+- `wpa_supplicant` can be run in the background with -B. In this mode, you can view logs with `sudo journalctl -u wpa_supplicant` or with `sudo grep wpa_supplicant /var/log/syslog`
+## Managing Wireless Networks with WPA GUI in Ubuntu
 WPA GUI offers an easy-to-use graphical interface for managing Wi-Fi connections in Ubuntu, eliminating the need for terminal commands.
-### Installing WPA GUI[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#installing-wpa-gui)
+### Installing WPA GUI
 ```
 sudo apt install wpa-gui
 ```
@@ -146,7 +147,7 @@ Launch WPA GUI:
 wpa_gui 
 ```
 or search for "WPA GUI" in the application menu
-### WPA GUI Interface Overview[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#wpa-gui-interface-overview)
+### WPA GUI Interface Overview
 - **Current Status**
     - **Description:** Displays connected SSID, signal strength, and IP address.
 - **Scan**
@@ -154,8 +155,8 @@ or search for "WPA GUI" in the application menu
 - **Network Configuration**
     - **Description:** Add, edit, or remove network profiles
 - **Messages**
-    - **Description:** Shows logs from wpa_supplicant for troubleshooting
-### Connecting to a Wireless Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442983-connecting-to-wi-fi-networks#connecting-to-a-wireless-network)
+    - **Description:** Shows logs from `wpa_supplicant` for troubleshooting
+### Connecting to a Wireless Network
 ![](https://files.cdn.thinkific.com/file_uploads/937577/images/903/8b7/1bc/1737392816299.png?width=1920)
 
 Scan with WPA GUI

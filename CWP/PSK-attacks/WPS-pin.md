@@ -1,7 +1,7 @@
 # WPS Pin
 Some [WPA/WPA2](../../networking/wifi/WPA-WPA2.md) networks are configured with WPS (Wi-Fi Protected Setup), which allows clients to connect using *an  8 digit pin* rather than the `PSK`. An attacker can exploit this setup by brute forcing the pin.
 
-For an AP to vulnerable, it has to:
+For an AP to be vulnerable, it has to:
 1. not block the protocol against brute force attempts
 2. not be using PBC (Push Button Connect) which requires physical access to the AP to exploit
 3. not be using a virtual pin (which only exists for a few seconds when its generated)

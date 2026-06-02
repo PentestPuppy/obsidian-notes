@@ -15,6 +15,15 @@ After *ensuring the interface is active* (see above) you can use the `iw` comman
 sudo iw dev wlan0 scan
 ```
 This command will list all available wifi networks as well as detailed info including SSID, signal strength, encryption type, etc..
+### Steps
+Ensure the wifi interface is enabled:
+```bash
+sudo ip link set dev wlan0 up
+```
+Scan for wifi networks:
+```bash
+sudo iw dev wlan0 scan
+```
 ### `nmcli`
 You can also use NeworkManager's `nmcli` command:
 ```bash

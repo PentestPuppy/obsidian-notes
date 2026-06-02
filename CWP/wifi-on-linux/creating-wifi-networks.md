@@ -26,9 +26,9 @@ The `hostapd` configuration file is used to define settings for a Wi-Fi acce
 ### Compatibility and Compliance
 - **ieee80211d**: Enables global compliance with spectrum management regulations
 - **ieee80211h**: Enables radar detection and dynamic frequency selection, which is mandatory in some countries for operation in the 5 GHz band
-## Usage Examples[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#usage-examples)
+## Usage Examples
 Below are examples of each type of network for hostapd.
-### OPN Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#opn-network)
+### OPN Network
 ```
 interface=wlan0
 driver=nl80211
@@ -50,7 +50,7 @@ ap_isolate=1
 - `macaddr_acl`: Specifies MAC address access control (optional and commented out)
 - `accept_mac_file`: File with the list of allowed MAC addresses (optional and commented out)
 - `ap_isolate`: Isolates clients connected to the access point, preventing them from communicating with each other
-### OWE Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#owe-network)
+### OWE Network
 ```
 interface=wlan0
 driver=nl80211
@@ -66,7 +66,7 @@ rsn_pairwise=CCMP
 - `wpa`: Sets the security protocol (2 for WPA2)
 - `wpa_key_mgmt`: WPA key management method (OWE for Opportunistic Wireless Encryption)
 - `rsn_pairwise`: Cipher used for the network (CCMP)
-### WEP Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#wep-network)
+### WEP Network
 ```
 interface=wlan0
 driver=nl80211
@@ -82,7 +82,7 @@ wep_key0=1122334455
 - `auth_algs`: Authentication algorithm (1 for open system)
 - `wep_default_key`: Default WEP key
 - `wep_key0`: Value of the WEP key (first index, usually 0)
-### PSK Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#psk-network)
+### PSK Network
 ```
 interface=wlan0
 driver=nl80211
@@ -97,7 +97,7 @@ wpa_passphrase=passwordPSK
 - `wpa_key_mgmt`: WPA key management method (WPA-PSK for Pre-Shared Key).
 - `wpa_pairwise`: Indicates encryption methods (TKIP and CCMP).
 - `wpa_passphrase`: Pre-shared passphrase.
-### SAE Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#sae-network)
+### SAE Network
 ```
 interface=wlan0
 ctrl_interface=/var/run/hostapd
@@ -114,7 +114,7 @@ ieee80211w=2
 - `wmm_enabled`: Enables Wi-Fi Multimedia (WMM)
 - `wpa_key_mgmt`: WPA key management method (SAE for Simultaneous Authentication of Equals)
 - `ieee80211w`: Enables protected management frames (2 for required)
-### MGT Network[](https://academy.wifichallenge.com/courses/take/certified-wifichallenge-professional-cwp/texts/57442984-creating-wi-fi-networks-access-points#mgt-network)
+### MGT Network
 In MGT networks, not only is the `hostapd` configuration file necessary, but you also need a TLS certificate and a file with user credentials or a connection to a Radius server.
 ```
 interface=wlan0

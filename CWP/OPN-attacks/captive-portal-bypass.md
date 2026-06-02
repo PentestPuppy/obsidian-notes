@@ -34,7 +34,7 @@ And then running `wpa-supplicant`:
 sudo wpa_supplicant -i <INTERFACE> -c wifi-opn.conf
 ```
 ## IP Spoofing
-Some captive portals identify clients via their [IP](../../networking/OSI/3-network/IP-addresses.md) address. 
+Some captive portals identify clients via their [IP](../../networking/OSI/3-network/IP-addresses.md) address, so the same idea applies; you just have to spoof the IP address of a client that's already authorized. 
 #### 1. Enable IP Forwarding
 This step allows the attacking device to function as a router and forward network packets b/w the victim and other devices
 ```bash
@@ -70,9 +70,9 @@ iptables -t mangle -A FORWARD -d <AUTHORIZED_CLIENT_IP> -j TTL --ttl-inc 1
 - `-d <authorized_client_ip>`: Specifies that the rule affects traffic destined for the authenticated client's IP
 - `-j TTL --ttl-inc 1`: Changes the Time-to-Live (TTL) value of the packets, increasing it by 1 to help obfuscate the traffic's origin and avoid detection
 ## Credential theft
-IF THE NETWORK ISN"T USING TLS YOU CAN JACK DEM CREDENTIALS WOW
+IF THE NETWORK ISN"T USING TLS YOU CAN JACK DEM CREDENTIALS WOW. This applies if you successfully connected/ got past the captive portal (pretty sure?).
 ## DNS Tunnel
-You can use a DNS tunnel like [iodine](https://github.com/yarrick/iodine), which has a server and client configuration. To set up a [DNS](../../networking/DNS/DNS.md) tunnel, a machine with access to the internet is needed (for running the server), as well as a domain for queries.
+You can use a [DNS](../../networking/DNS/DNS.md) tunnel like [iodine](https://github.com/yarrick/iodine), which has a server and client configuration. To set up a [DNS](../../networking/DNS/DNS.md) tunnel, a machine with access to the internet is needed (for running the server), as well as a domain for queries.
 
 The configuration includes the following:
 1. The server (like iodine) is installed on a computer with internet access

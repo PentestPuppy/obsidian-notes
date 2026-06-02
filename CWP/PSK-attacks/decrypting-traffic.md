@@ -1,5 +1,5 @@
 # Decrypting traffic in WPA/WPA2-PSK Networks
-If you can capture all four packets of the [WPA/WPA2 handshake](../../networking/wifi/WPA-WPA2.md#Authentication) (which is where the encryption keys are negotiated), then you can use that information to *decrypt network traffic* between clients and the AP. Even if the client is using a VPN, we can still gain a lot of information by capturing handshakes and decrypting their traffic.
+If you can capture *all four packets* of the [WPA/WPA2 handshake](../../networking/wifi/WPA-WPA2.md#Authentication) (which is where the encryption keys are negotiated), then you can use that information to *decrypt network traffic* between clients and the AP. Even if the client is using a VPN, we can still gain a lot of information by capturing handshakes and decrypting their traffic.
 
 To carry out the attack, traffic is captured using `tshark` or `airodump-ng`. To ensure you capture authentication packets, you can perform [deauth attacks](handshake-attack.md#2.1%20Force%20traffic) to force clients off the target AP so you can capture when the re-auth afterwards.
 ## Steps
