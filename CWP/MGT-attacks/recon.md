@@ -15,7 +15,7 @@ First, use `airodump-ng` to capture wifi traffic and save it to a capture file:
 ```bash
 airodump-ng wlan0mon -w ./captures/mgt -c 44 --wps
 ```
-Then, use [wireshark](../../cybersecurity/TTPs/recon/tools/scanning/wireshark.md) to analyze the traffic and find transmitted usernames:
+Then, use [wireshark](../../cybersecurity/TTPs/recon/tools/scanning/wireshark.md) to analyze the traffic and find transmitted usernames (look for "Response, Identity" in the Info column):
 ![](../CWP-pics/user-enumeration-1.png)
 ### Using `wifi_db`
 You can also use [wifi_db](../offensive-wifi-recon/wifi_db.md) to extract usernames *automagically* (point it at the directory where your capture file is saved, in this case `./captures`)
@@ -41,7 +41,7 @@ tshark -r ./captures/mgt-01.cap -Y '(eap && wlan.ra == xx:xx:xx:xx:xx:xx) && (ea
 - `-Y '(eap && wlan.ra == xx:xx:xx:xx:xx:xx) && (eap.identity)'`: the display filter specifying that only EAP packets with the given destination MAC address containing an EAP identifier should be considered
 - `-T fields -e eap.identity`: configures the output to display only the EAP identity field
 ## AP Certificate Enumeration
-For the TLS tunnel to be established b/w the AP and a client, the server's certificate needs to be sent in *plaintext first*. Capturing the certificate allows attackers to find out more information about the server and the connection, and the cert could also be leveraged in attacks like the [evil twin](../PSK-attacks/evil-twin.md) attack.
+For the TLS tunnel to be established b/w the AP and a client, the public part of the server's certificate needs to be sent in *plaintext first*. Capturing the certificate allows attackers to find out more information about the server and the connection, and the cert could also be leveraged in attacks like the [evil twin](../PSK-attacks/evil-twin.md) attack.
 ### `pcapFilter.sh`
 [`pcpapFilter.sh`](https://gist.github.com/r4ulcl/f3470f097d1cd21dbc5a238883e79fb2) is a command line tool which you can use to extract certificates from capture files:
 ```bash

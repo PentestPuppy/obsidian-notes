@@ -1,5 +1,5 @@
 # Phishing + RogueAP (Captive Portal)
-This attack combines a [rogue-AP](rogue-AP.md) attack with a [captive portal](../OPN-attacks/captive-portal-bypass.md) for [phishing](../../cybersecurity/TTPs/delivery/phishing.md). The attacker creates a fake AP and then redirects victims to the captive portal. Once they enter their credentials, you obrain them.
+This attack combines a [rogue-AP](rogue-AP.md) attack with a [captive portal](../OPN-attacks/captive-portal-bypass.md) for [phishing](../../cybersecurity/TTPs/delivery/phishing.md). The attacker creates a fake AP and then redirects victims to the captive portal. Once they enter their credentials, you obtain them.
 
 To do this, the attacker creates a fake AP with an OPN network configuration. Then they create a realistic captive portal which prompts users for their password.
 ## Steps
